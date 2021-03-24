@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Q&A新規投稿画面</title>
+</head>
+ 
+<body>
+    <h1>Q&A新規投稿画面</h1>
+    <form action="{% url 'confirm' %}" method="post">
+        {% csrf_token %}
+        <p>質　問：{{ form.question_text }}</p>
+        <p>回　答：{{ form.anser_text }}</p>
+        <button type="submit">確認する</button>
+    </form>
+</body>
+</html>  

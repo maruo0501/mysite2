@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <title>Q&A詳細画面</title>
+</head>
+ 
+<body>
+    <h1>Q&A詳細画面</h1>
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>質問</th>
+            <th>回答</th>
+        </tr>
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.question_text }}</td>
+            <td>{{ object.anser_text }}</td>
+        </tr>
+    </table>
+    <a href="{% url 'update' question.pk%}">編集</a>
+    <a href="{% url 'delete' question.pk%}">削除</a>
+</body>
+ 
+</html>

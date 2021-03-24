@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Q&A一覧画面</title>
+</head>
+ 
+<body>
+    <h1>Q&A一覧画面</h1>
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>質問</th>
+            <th>回答</th>
+        </tr>
+        {% for post in object_list %}
+        <tr>
+            <td><a href="{% url 'detail' post.pk %}">{{ post.id }}</a></td>
+            <td><a href="{% url 'detail' post.pk %}">{{ post.question_text }}</a></td>
+            <td><a href="{% url 'detail' post.pk %}">{{ post.anser_text }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'form' %}">新規投稿</a>
+</body>
+</html> 

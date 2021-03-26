@@ -17,6 +17,29 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path('api/', include('api.urls')),
     path('', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
+
+# 追加
+# from django.conf.urls import url, include
+# from django.contrib.auth.models import User
+# from rest_framework import routers, serializers, viewsets
+# class UdemyUserSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ('url', 'username', 'email', 'is_staff')
+
+# class UdemyUserViewSet(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UdemyUserSerializer
+
+# router = routers.DefaultRouter()
+# router.register(r'users', UdemyUserViewSet)
+
+# urlpatterns = [
+#     url(r'^', include(router.urls)),
+#     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+# ]
+
